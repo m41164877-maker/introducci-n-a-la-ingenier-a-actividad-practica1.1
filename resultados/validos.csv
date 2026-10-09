@@ -1,0 +1,4 @@
+sensor,temperatura,ubicacion,clasificacion
+S01,24.5,Zona A,Normal
+S02,38.2,Zona B,Alta
+S04,31.0,Zona B,Normal

@@ -1,0 +1,6 @@
+sensor,temperatura,ubicacion
+S01,24.5,Zona A
+S02,38.2,Zona B
+S03,-80.0,Zona A
+S04,31.0,Zona B
+S05,Vacio,Zona A

@@ -1,0 +1,35 @@
+En el caso del ejercicio del taller  se usa el código para revisar si el valor de una medición (como la temperatura o el peso) es correcto y seguro, asegurándose de que no sea ni muy alto ni muy bajo.
+Para procesar un archivo en C, se utiliza la función fopen("datos.csv", "r") para abrirlo en modo lectura.
+
+Explicación de cómo se leería un archivo con múltiples registros:
+
+Se omite la primera línea (los encabezados) mediante la función fgets().
+
+Se implementa un bucle while junto con fscanf() o strtok() para extraer los valores separados por comas (sensor, temperatura, ubicacion) en cada fila hasta alcanzar el final del archivo (EOF).
+
+Se toma un dato (generalmente texto) y lo transforma en un número con decimales antes de verificar si es una temperatura válida.
+
+
+---CODIGO EN C---
+
+
+
+#include <stdio.h>
+
+// Función para validar una temperatura individual (-50 a 100)
+int validar_temperatura(float temp) {
+    if (temp >= -50.0 && temp <= 100.0) {
+        return 1; // Registro Válido
+    }
+    return 0; // Registro Inválido
+}
+
+int main() {
+    float temp_prueba = 24.5;
+    if (validar_temperatura(temp_prueba)) {
+        printf("Temperatura %.2f: VÁLIDA\n", temp_prueba);
+    } else {
+        printf("Temperatura %.2f: INVÁLIDA\n", temp_prueba);
+    }
+    return 0;
+}

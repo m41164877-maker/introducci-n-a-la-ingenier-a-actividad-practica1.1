@@ -1,0 +1,5 @@
+--- Prueba de validacion ---
+valor: ¨  24.5 ¿es valido?: True
+valor: ¨  38.2 ¿es valido?: True
+valor: ¨ -80.0 ¿es valido?: False
+valor: ¨ Vacio ¿es valido?: False

@@ -1,0 +1,30 @@
+los datos están organizados en tablas guardadas en una base de datos Antes de hacer cualquier cálculo, se descartan los datos erróneos o irrelevantes, por ejemplo sensores que marcan registros erroneos o registros vacios (NULL)
+
+se separa las lecturas por cada lugar usando GROUP BY y calcula la temperatura media de cada uno usando la función AVG().
+
+
+---CODIGO EN SQL---
+-- 1. Crear la tabla para almacenar las mediciones
+CREATE TABLE mediciones_sensores (
+    sensor VARCHAR(10),
+    temperatura DECIMAL(5,2),
+    ubicacion VARCHAR(50)
+);
+
+-- 2. Insertar los datos de entrada
+INSERT INTO mediciones_sensores (sensor, temperatura, ubicacion) VALUES
+('S01', 24.5, 'Zona A'),
+('S02', 38.2, 'Zona B'),
+('S03', -80.0, 'Zona A'),
+('S04', 31.0, 'Zona B');
+
+-- 3. Filtrar valores válidos (-50 a 100) y calcular el promedio por ubicación
+SELECT 
+    ubicacion,
+    ROUND(AVG(temperatura), 2) AS promedio_temperatura
+FROM 
+    mediciones_sensores
+WHERE 
+    temperatura BETWEEN -50 AND 100
+GROUP BY 
+    ubicacion;

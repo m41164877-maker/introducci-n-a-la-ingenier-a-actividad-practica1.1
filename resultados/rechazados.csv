@@ -1,0 +1,3 @@
+sensor,temperatura,ubicacion,motivo
+S03,-80.0,Zona A,Temperatura inválida o fuera de rango
+S05,Vacio,Zona A,Temperatura inválida o fuera de rango
